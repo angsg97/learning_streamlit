@@ -10,12 +10,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.decomposition import PCA
 
-st.title("Streamlit example")
-
-st.write("""
-# Explore Different Classifiers
-Which one is the best one?
-""")
+st.title("Explore Different Classifiers")
 
 dataset_name = st.sidebar.selectbox("Select Dataset", ("Iris", "Breast Cancer", "Wine dataset"))
 
@@ -82,7 +77,7 @@ X_projected = pca.fit_transform(X)
 x1 = X_projected[:, 0]
 x2 = X_projected[:, 1]
 
-fig = plt.figure()
+fig = plt.figure(figsize=(8,4))
 plt.scatter(x1, x2, c=Y, alpha=0.8, cmap="viridis")
 plt.xlabel("Principal Component 1")
 plt.ylabel("Principal Component 2")
